@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { StyleSheet, SafeAreaView, Switch, Text, Button } from 'react-native';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {StyleSheet, SafeAreaView, Switch, Text, Button} from 'react-native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import { SwitchContextProvider, useSwitchState } from './switch-context';
+import {SwitchContextProvider, useSwitchState} from './switch-context';
 
 const HomeScreen = () => {
   const switchState = useSwitchState();
@@ -38,10 +38,12 @@ const LoginButton = (): JSX.Element => {
   };
 
   return (
-    <Button title="Login"
-            color="white"
-            disabled={!switchState.isOn}
-            onPress={handleClick} />
+    <Button
+      title="Login"
+      color="white"
+      disabled={!switchState.isOn}
+      onPress={handleClick}
+    />
   );
 };
 
@@ -53,12 +55,19 @@ const MainStackScreen = (): JSX.Element => {
       screenOptions={{
         headerStyle: {
           backgroundColor: 'red',
-        }, 
+        },
         headerTintColor: 'white',
-      }}
-    >
-      <MainStack.Screen name="Home" component={HomeScreen} options={{title: "Home", headerRight: LoginButton}} />
-      <MainStack.Screen name="Away" component={AwayScreen} options={{title: "Hello"}} />
+      }}>
+      <MainStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{title: 'Home', headerRight: LoginButton}}
+      />
+      <MainStack.Screen
+        name="Away"
+        component={AwayScreen}
+        options={{title: 'Hello'}}
+      />
     </MainStack.Navigator>
   );
 };
@@ -66,9 +75,7 @@ const MainStackScreen = (): JSX.Element => {
 const App = () => {
   return (
     <SwitchContextProvider>
-      <NavigationContainer>
-        {MainStackScreen()}
-      </NavigationContainer>
+      <NavigationContainer>{MainStackScreen()}</NavigationContainer>
     </SwitchContextProvider>
   );
 };
