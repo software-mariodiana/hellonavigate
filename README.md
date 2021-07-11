@@ -2,7 +2,7 @@
 
 A small demo that illustrates a navigation-based app that uses the React "Context" API to share state between two sibling components, a switch and a navigation bar button.
 
-![<Display Name>](<Website URL>)
+![App screen shot](https://raw.githubusercontent.com/software-mariodiana/hellonavigate/master/ScreenShot.png)
 
 #### Installing dependencies 
 
