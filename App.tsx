@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, Switch, Text, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {SwitchContextProvider, useSwitchState} from './switch-context';
+import { SwitchContextProvider, useSwitchState } from './switch-context';
 
 const HomeScreen = () => {
   const switchState = useSwitchState();
