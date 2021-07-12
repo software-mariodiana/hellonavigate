@@ -10,7 +10,7 @@ const useSwitchState = (): SwitchStateTuple => {
   const context = React.useContext(SwitchContext);
 
   if (!context) {
-    throw new Error(`useSwitchState must be used within a SwitchProvider.`);
+    throw new Error(`useSwitchState must be used within a SwitchContextProvider.`);
   }
 
   return context;
