@@ -10,16 +10,10 @@ At the time of this writing, the project was based off of the React Native navig
 
 https://reactnavigation.org/docs/getting-started
 
-These instructions are for iOS. Following the first two pages of the above tutorial, dependencies should be installed as follows:
+The initial setup for dependencies is discussed in the tutorial, but this project's dependencies can be added by running:
 
 ```
-$ npm install @react-navigation/native
-$ npm install react-native-reanimated \
-    react-native-gesture-handler \
-    react-native-screens \
-    react-native-safe-area-context \
-    @react-native-community/masked-view
-$ npm install @react-navigation/stack
+$ npm install
 ```
 
 Then, install the pods via CocoaPods:
@@ -40,4 +34,4 @@ The project was written with help from this [entry on Stack Overflow.](https://s
 
 Additional guidance was gleaned from the article ["Application State Management with React."](https://kentcdodds.com/blog/application-state-management-with-react)
 
-###### Touched: 2021-07-10
+###### Touched: 2021-07-12
