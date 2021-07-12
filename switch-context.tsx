@@ -3,29 +3,17 @@
 import React, {SetStateAction} from 'react';
 
 type SwitchStateTuple = [boolean, React.Dispatch<SetStateAction<boolean>>];
-type SwitchState = {
-  isOn: boolean;
-  setOn: React.Dispatch<SetStateAction<boolean>>;
-  toggle: () => void;
-};
 
 const SwitchContext = React.createContext<SwitchStateTuple>(null!);
 
-const useSwitchState = (): SwitchState => {
+const useSwitchState = (): SwitchStateTuple => {
   const context = React.useContext(SwitchContext);
 
   if (!context) {
     throw new Error(`useSwitchState must be used within a SwitchProvider.`);
   }
 
-  const [isOn, setOn] = context;
-
-  const toggle = () => {
-    return setOn((b: boolean) => !b);
-  };
-
-  // We can now return this SwitchState object which allows us to access all this.
-  return {isOn, setOn, toggle};
+  return context;
 };
 
 const SwitchContextProvider = (props: object) => {

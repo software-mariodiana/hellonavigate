@@ -7,15 +7,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {SwitchContextProvider, useSwitchState} from './switch-context';
 
 const HomeScreen = () => {
-  const switchState = useSwitchState();
+  const [isOn, setOn] = useSwitchState();
 
   return (
     <SafeAreaView>
       <Switch
         style={styles.switch}
         ios_backgroundColor="#3e3e3e"
-        onValueChange={switchState.toggle}
-        value={switchState.isOn}
+        onValueChange={setOn}
+        value={isOn}
       />
     </SafeAreaView>
   );
@@ -31,7 +31,7 @@ const AwayScreen = () => {
 
 const LoginButton = (): JSX.Element => {
   const navigation = useNavigation();
-  const switchState = useSwitchState();
+  const [isOn] = useSwitchState();
 
   const handleClick = () => {
     navigation.navigate('Away');
@@ -41,7 +41,7 @@ const LoginButton = (): JSX.Element => {
     <Button
       title="Login"
       color="white"
-      disabled={!switchState.isOn}
+      disabled={!isOn}
       onPress={handleClick}
     />
   );
